@@ -2,6 +2,7 @@
 DELIMITER |
 CREATE PROCEDURE ComputeAverageWeightedScoreForUser(IN user_id INT)
 BEGIN
+	DECLARE average Decimal(10, 2);
 	SET @average = (SELECT AVG(corrections.score * projects.weight) AS average_score
 	FROM corrections
 	JOIN projects
