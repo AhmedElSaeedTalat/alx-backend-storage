@@ -25,4 +25,5 @@ def display_nginx():
     print(len(get_status), 'status check')
 
 
-display_nginx()
+if __name__ == "__main__":
+    display_nginx()
