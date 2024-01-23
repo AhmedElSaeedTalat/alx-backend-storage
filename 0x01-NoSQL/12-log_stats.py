@@ -16,7 +16,7 @@ if __name__ == "__main__":
     pach = collection.count_documents({'method': 'PATCH'})
     delete = collection.count_documents({'method': 'DELETE'})
     print(f'\tmethod GET: {get}')
-    print(f'\tmethod POST {post}')
+    print(f'\tmethod POST: {post}')
     print(f'\tmethod PUT: {put}')
     print(f'\tmethod PATCH: {pach}')
     print(f'\tmethod DELETE: {delete}')
