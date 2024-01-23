@@ -3,8 +3,7 @@
 from pymongo import MongoClient
 
 
-def display_nginx():
-    """ display data of nginx """
+if __name__ == "__main__":
     client = MongoClient('mongodb://127.0.0.1:27017')
     collection = client.logs.nginx
     count_documents = collection.count_documents({})
@@ -23,7 +22,3 @@ def display_nginx():
 
     get_status = list(collection.find({'method': 'GET', 'path': '/status'}))
     print(f'{len(get_status)} status check')
-
-
-if __name__ == "__main__":
-    display_nginx()
