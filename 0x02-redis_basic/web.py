@@ -16,7 +16,7 @@ def cache_countVisited(method: Callable) -> Callable:
         db.incr(key)
         result = method(url)
         if result:
-            db.setex('result', 10, result)
+            db.setex(f'result:{url}', 10, result)
         return result
     return wrapper
 
