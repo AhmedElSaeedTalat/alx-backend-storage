@@ -44,7 +44,7 @@ def replay(method: Callable):
     combined_list = list(zip(nput_list, output_list))
     print(f'{name} was called {len(combined_list)} times:')
     for key, value in combined_list:
-        print(f"{name}(*('{key.decode('utf-8')})',) -> \
+        print(f"{name}(*{key.decode('utf-8')},) -> \
 {value.decode('utf-8')}")
 
 
