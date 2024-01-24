@@ -43,9 +43,9 @@ def replay(method: Callable):
     output_list = cache.lrange(output, 0, -1)
     combined_list = list(zip(nput_list, output_list))
     print(f'{name} was called {len(nput_list)} times:')
-    for item in combined_list:
-        print(f"{name}(*('{item[0].decode('utf-8')})',) -> \
-{item[1].decode('utf-8')}")
+    for key, value in combined_list:
+        print(f"{name}(*('{key.decode('utf-8')})',) -> \
+{value.decode('utf-8')}")
 
 
 class Cache:
